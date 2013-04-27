@@ -10,7 +10,7 @@ int main() {
 		return -1;
 	}
 	// Create a window in which the captured images will be presented
-	cvNamedWindow( "mywindow", CV_WINDOW_AUTOSIZE );
+	//cvNamedWindow( "mywindow", CV_WINDOW_AUTOSIZE );
 	// Show the image captured from the camera in the window and repeat
 	while ( 1 ) {
 		// Get one frame
@@ -30,7 +30,7 @@ int main() {
 		std::cout<<c.val[1]<<std::endl;
 		cvSetImageROI(frame,old_roi); // reset old roi 
 
-		cvShowImage( "mywindow", frame );
+		//cvShowImage( "mywindow", frame );
 		// Do not release the frame!
 		//If ESC key pressed, Key=0x10001B under OpenCV 0.9.7(linux version),
 		//remove higher bits using AND operator
@@ -38,6 +38,6 @@ int main() {
 	}
 	// Release the capture device housekeeping
 	cvReleaseCapture( &capture );
-	cvDestroyWindow( "mywindow" );
+	//cvDestroyWindow( "mywindow" );
 	return 0;
 }
